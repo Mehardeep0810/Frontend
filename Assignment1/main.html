@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JSON Tasks Demo</title>
+</head>
+<body>
+  <h1>JSON Tasks in Frontend</h1>
+  <pre id="output"></pre>
+
+  <script>
+    const output = document.getElementById("output");
+
+    function log(title, data) {
+      output.textContent += `\n--- ${title} ---\n` + JSON.stringify(data, null, 2) + "\n";
+      console.log(title, data);
+    }
+
+    // 1️ Create a JSON object for a Student
+    const student = {
+      name: "Alice",
+      age: 20,
+      subjects: ["Math", "Physics", "Computer Science"]
+    };
+    log("1. Student JSON", student);
+
+    // 2️ Convert a JavaScript object (Car) into JSON format
+    const car = { brand: "Toyota", model: "Corolla", year: 2022 };
+    const carJson = JSON.stringify(car);
+    log("2. Car JSON String", carJson);
+
+    // 3️ Read a JSON file and extract specific fields (simulate with inline JSON)
+    const dataFromFile = { name: "Alice", email: "alice@example.com", age: 22 };
+    const { name, email } = dataFromFile;
+    log("3. Extracted Fields", { name, email });
+
+    // 4️ Merge two JSON objects into one
+    const obj1 = { id: 1, name: "Alice" };
+    const obj2 = { email: "alice@example.com", age: 22 };
+    const merged = { ...obj1, ...obj2 };
+    log("4. Merged Object", merged);
+
+    // 5️ Validate JSON structure
+    const jsonString = '{"name":"Alice","age":22}';
+    try {
+      JSON.parse(jsonString);
+      log("5. JSON Validation", "Valid JSON");
+    } catch (error) {
+      log("5. JSON Validation", "Invalid JSON: " + error.message);
+    }
+
+    // 6️ Convert a list of JS objects into a JSON array
+    const students = [
+      { name: "Alice", age: 20 },
+      { name: "Bob", age: 24 }
+    ];
+    const jsonArray = JSON.stringify(students);
+    log("6. JSON Array", jsonArray);
+
+    // 7️ Parse JSON and filter only records where age > 25
+    const jsonString2 = '[{"name":"Alice","age":20},{"name":"Bob","age":30}]';
+    const data = JSON.parse(jsonString2);
+    const filtered = data.filter(person => person.age > 25);
+    log("7. Filtered Records (age > 25)", filtered);
+  </script>
+</body>
+</html>
