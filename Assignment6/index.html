@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Address Book App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1>📒 Address Book</h1>
+  </header>
+
+  <main class="container">
+    <section class="form-card">
+      <h2>Add Person</h2>
+      <form id="addressForm">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob">
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <textarea id="address" rows="3"></textarea>
+        </div>
+        <div class="actions">
+          <button type="reset" class="btn btn-outline">Reset</button>
+          <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="list-card">
+      <h2>Saved Contacts</h2>
+      <ul id="contactList"></ul>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>© 2025 Address Book App</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

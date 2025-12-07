@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #f7f9fc;
+  color: #222;
+}
+
+.app-header {
+  background: #2b66f6;
+  color: #fff;
+  padding: 16px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 24px;
+  justify-content: center;
+}
+
+.form-card, .list-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 350px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.form-group {
+  margin: 12px 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.btn {
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: #2b66f6;
+  color: #fff;
+}
+
+.btn-outline {
+  border: 1px solid #2b66f6;
+  background: transparent;
+  color: #2b66f6;
+}
+
+#contactList {
+  list-style: none;
+  padding: 0;
+}
+
+#contactList li {
+  background: #eef3ff;
+  margin: 6px 0;
+  padding: 10px;
+  border-radius: 6px;
+}
