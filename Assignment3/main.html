@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Forms & Media Queries Demo</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+
+    form { max-width: 400px; margin-bottom: 40px; }
+    label { display: block; margin-top: 10px; }
+    input, textarea, select { width: 100%; padding: 8px; margin-top: 5px; }
+    .error { color: red; font-size: 0.9em; }
+
+    /* Media Query Examples */
+    .box {
+      background: lightblue;
+      padding: 20px;
+      margin: 10px 0;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      body { background: #f0f0f0; }
+      .box { background: lightcoral; }
+    }
+
+    @media (min-width: 601px) and (max-width: 1024px) {
+      .box { background: lightgreen; }
+    }
+
+    @media (min-width: 1025px) {
+      .box { background: lightblue; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>HTML5 Input Forms Demo</h1>
+  <form id="demoForm">
+    <label for="username">Username (min 3 chars):</label>
+    <input type="text" id="username" required minlength="3">
+    <div id="userError" class="error"></div>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" required>
+    <div id="emailError" class="error"></div>
+
+    <label for="age">Age (18+):</label>
+    <input type="number" id="age" min="18" required>
+    <div id="ageError" class="error"></div>
+
+    <label for="feedback">Feedback:</label>
+    <textarea id="feedback" rows="4"></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <h2>Media Query Demo</h2>
+  <p>Resize the browser window to see background colors change.</p>
+  <div class="box">Responsive Box</div>
+
+  <script>
+    const form = document.getElementById("demoForm");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault(); // prevent actual submission
+      let valid = true;
+
+      // Username validation
+      const username = document.getElementById("username");
+      const userError = document.getElementById("userError");
+      if (username.value.length < 3) {
+        userError.textContent = "Username must be at least 3 characters.";
+        valid = false;
+      } else {
+        userError.textContent = "";
+      }
+
+      // Email validation
+      const email = document.getElementById("email");
+      const emailError = document.getElementById("emailError");
+      if (!email.value.includes("@")) {
+        emailError.textContent = "Please enter a valid email.";
+        valid = false;
+      } else {
+        emailError.textContent = "";
+      }
+
+      // Age validation
+      const age = document.getElementById("age");
+      const ageError = document.getElementById("ageError");
+      if (age.value < 18) {
+        ageError.textContent = "You must be at least 18 years old.";
+        valid = false;
+      } else {
+        ageError.textContent = "";
+      }
+
+      if (valid) {
+        alert("Form submitted successfully!");
+      }
+    });
+  </script>
+</body>
+</html>
