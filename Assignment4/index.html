@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Employee Payroll</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="app-header">
+    <div class="logo">
+      <div class="logo-mark">EP</div>
+      <span class="logo-text">Employee Payroll</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="form-card">
+      <h1 class="form-title">Employee Payroll Form</h1>
+
+      <form id="employeeForm" novalidate>
+        
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Enter full name" required />
+          <small class="error" id="nameError"></small>
+        </div>
+
+        <fieldset class="form-group">
+          <legend>Profile Pic</legend>
+          <div class="profile-pics">
+            <label class="profile-option">
+              <input type="radio" name="profilePic" value="avatar1.png" checked />
+              <img src="https://via.placeholder.com/64?text=A1" alt="Avatar 1" />
+            </label>
+            <label class="profile-option">
+              <input type="radio" name="profilePic" value="avatar2.png" />
+              <img src="https://via.placeholder.com/64?text=A2" alt="Avatar 2" />
+            </label>
+            <label class="profile-option">
+              <input type="radio" name="profilePic" value="avatar3.png" />
+              <img src="https://via.placeholder.com/64?text=A3" alt="Avatar 3" />
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="grid two-cols">
+          <fieldset class="form-group">
+            <legend>Gender</legend>
+            <label class="inline"><input type="radio" name="gender" value="Male" checked /> Male</label>
+            <label class="inline"><input type="radio" name="gender" value="Female" /> Female</label>
+            <label class="inline"><input type="radio" name="gender" value="Other" /> Other</label>
+          </fieldset>
+
+          <fieldset class="form-group">
+            <legend>Department</legend>
+            <div class="chips">
+              <label class="chip"><input type="checkbox" name="department" value="HR" /> HR</label>
+              <label class="chip"><input type="checkbox" name="department" value="Sales" /> Sales</label>
+              <label class="chip"><input type="checkbox" name="department" value="Finance" /> Finance</label>
+              <label class="chip"><input type="checkbox" name="department" value="Engineering" checked /> Engineering</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <label for="salary">Salary: <span id="salaryValue">40000</span></label>
+          <input id="salary" name="salary" type="range" min="10000" max="200000" step="1000" value="40000" />
+        </div>
+
+        <fieldset class="form-group">
+          <legend>Start Date</legend>
+          <div class="grid three-cols">
+            <div><label for="day">Day</label><select id="day" name="day"></select></div>
+            <div><label for="month">Month</label><select id="month" name="month"></select></div>
+            <div><label for="year">Year</label><select id="year" name="year"></select></div>
+          </div>
+          <small class="error" id="dateError"></small>
+        </fieldset>
+
+        <div class="form-group">
+          <label for="notes">Notes</label>
+          <textarea id="notes" name="notes" rows="3" placeholder="Any notes..."></textarea>
+        </div>
+
+        <div class="actions">
+          <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
+          <button type="reset" class="btn btn-outline">Reset</button>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
+        <div id="result" class="result"></div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="app-footer">
+    <p>© 2025 Employee Payroll</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

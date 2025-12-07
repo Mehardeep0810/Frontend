@@ -1,0 +1,133 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #f7f9fc;
+  color: #222;
+}
+
+.app-header {
+  background: #101828;
+  color: #fff;
+  padding: 16px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #2b66f6;
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 32px;
+}
+
+.form-card {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  max-width: 800px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.form-title {
+  margin-bottom: 16px;
+}
+
+.form-group {
+  margin: 16px 0;
+}
+
+.inline {
+  margin-right: 12px;
+}
+
+.profile-pics {
+  display: flex;
+  gap: 12px;
+}
+
+.profile-option img {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+}
+
+.chips {
+  display: flex;
+  gap: 8px;
+}
+
+.chip {
+  background: #eef3ff;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+.two-cols {
+  grid-template-columns: 1fr 1fr;
+}
+
+.three-cols {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: #2b66f6;
+  color: #fff;
+}
+
+.btn-outline {
+  border: 1px solid #2b66f6;
+  background: transparent;
+  color: #2b66f6;
+}
+
+.btn-secondary {
+  background: #ddd;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+.result {
+  margin-top: 16px;
+  padding: 12px;
+  background: #f4f8ff;
+  border: 1px solid #cfe0ff;
+  border-radius: 8px;
+  display: none;
+  white-space: pre-wrap;
+}
